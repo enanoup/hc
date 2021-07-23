@@ -1,0 +1,564 @@
+<app-header></app-header>
+
+<section class="left-side-content transition">
+    <div class="side-image"> <img src="assets/images/side-image1.jpg" alt="Image" class="bg-image">
+    </div>
+    <!-- end side-image -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>En HC Inteligencia en Personal:</h1>
+                <h4>Damos soluciones financieras para cubrir las necesidades de tu empresa.</h4>
+
+                <div class="row" style="padding-top: 30px;">
+                    <div class="col-md-2 icons-class">
+                        <img width="50px" src="assets/images/icons/experiencia.svg">
+                    </div>
+
+                    <div class="col-md-10" style="padding: 0 !important; margin: 0 auto !important;">
+                        <p class="about-text">
+                            <strong>Experiencia</strong><br>Más de 25 años nos respaldan, brindando servicio y calidad a nuestros clientes.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row" style="padding-top: 30px;">
+                    <div class="col-md-2 icons-class">
+                        <img width="50px" src="assets/images/icons/personal.svg">
+                    </div>
+
+                    <div class="col-md-10" style="padding: 0 !important; margin: 0 !important;">
+                        <p class="about-text">
+                            <strong>Personal Reconocido</strong><br>Contamos con Asesores Especializados y altamente reconocidos por grandes instituciones Nacionales e Internacionales.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="row" style="padding-bottom: 40px; padding-top:30px">
+                    <div class="col-md-2 icons-class">
+                        <img width="50px" src="assets/images/icons/actualizar.svg">
+                    </div>
+
+                    <div class="col-md-10" style="padding: 0 !important; margin: 0 !important;">
+                        <p class="about-text">
+                            <strong>Actualización</strong><br>Capacitación y Actualización constante de Nuestro Capital Humano.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 about-button">
+                    <a routerLink="/home" fragment="servicios">CONOCE MÁS</a>
+                </div>
+            </div>
+            <!-- end col-6 -->
+            <div class="col-md-6 col-md-offset-2">
+                <div class="content-image"><img src="assets/images/side-image1.jpg" alt="Image"> </div>
+                <!-- end content-image -->
+            </div>
+            <!-- end col-6 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+
+<section class="featured-solutions transition" id="servicios">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center" style="padding-bottom: 30px;">
+                <h2>Nuestros Servicios</h2>
+                <h4>Análisis, enfoque y una correcta aplicación de recursos harán la diferencia.</h4>
+            </div>
+            <!-- end col-12 -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a style="cursor: pointer;" (click)="openModal('service-1')">
+                    <div class="solution-box text-center single-solution-block">
+                        <figure class="image">
+                            <img src="assets/images/servicio1.jpg" class="icon" alt="Image">
+                        </figure>
+                        <!-- end image -->
+                        <h4>Asesoría Contable y Fiscal</h4>
+                        <p>Los cambios conllevan retos, por ello hay que enfocarnos en los efectos y oportunidades que representan.
+                        </p>
+                    </div>
+                </a>
+                <!-- end solution-box -->
+            </div>
+            <!-- end col-4 -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a style="cursor: pointer;" (click)="openModal('service-2')">
+                    <div class="solution-box text-center single-solution-block">
+                        <figure class="image"><img src="assets/images/servicio2.jpg" class="icon" alt="Image"></figure>
+                        <!-- end image -->
+                        <h4>Asesoría Administrativa</h4>
+                        <p>Una correcta administración de los recursos se traduce en una mejor rentabilidad y competitividad.</p>
+                    </div>
+                </a>
+                <!-- end solution-box -->
+            </div>
+            <!-- end col-4 -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a style="cursor: pointer;" (click)="openModal('service-3')">
+                    <div class="solution-box text-center single-solution-block">
+                        <figure class="image"><img src="assets/images/servicio3.jpg" class="icon" alt="Image"></figure>
+                        <!-- end image -->
+                        <h4>Asesoría Financiera</h4>
+                        <p>Todo proceso es susceptible de mejora y en las manos expertas es sinónimo de éxito.</p>
+                    </div>
+                </a>
+                <!-- end solution-box -->
+            </div>
+            <!-- end col-4 -->
+            <div class="col-xs-12 text-center more-info">
+                <a routerLink="/home" fragment="contacto">MÁS INFORMACIÓN</a>
+            </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+        <!-- The Modal -->
+        <div *ngFor="let modal of modals" id="{{modal.id}}" class="modal-funcion">
+            <!-- Modal content -->
+            <div class="modal-content-funcion animate__animated">
+                <div class="row justify-content-center" style="margin-bottom: 20px">
+                    <div class="col-10 text-center">
+                        <h3 style="color: #406C98; font-family: 'Playfair Display';"><strong>{{modal.title}}</strong></h3>
+                    </div>
+
+                    <span class="close" (click)="closeModal()">&times;</span>
+
+                </div>
+
+                <div class="row" *ngFor="let servicio of modal.servicios">
+                    <div class="col-12" style="padding: 0 10px !important">
+                        <p style="margin: 0px !important; padding: 0px !important; font-size: 14px; color:#333333;">- {{servicio}}</p>
+                        <hr class="horizontal-funcionalidad">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" style="padding: 8px !important;">
+                        <a routerLink="/home" fragment="contacto" (click)="closeModal();" style="display: block; margin: 0 auto; font-weight: bold;" type="button" class="btn btn-info">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+</section>
+<!-- end featured-solutions -->
+
+
+
+<!-- end header -->
+<!--section class="highlights">
+    <div class="container">
+        <div class="row" style="margin: 0 auto !important;">
+            <div class="col-xs-12">
+                <h2>Nuestros Servicios</h2>
+                <h6>Todo proceso es susceptible de mejora y en las manos expertos es sinónimo de éxito </h6>
+            </div>
+           
+            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                <img src="assets/images/service-icon1.jpg" alt="Image">
+                <h4>Asesoría Contable y Fiscal</h4>
+                <p>General programming advice doled out invariably seems</p>
+            </div>
+           
+            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                <img src="assets/images/service-icon2.jpg" alt="Image">
+                <h4>Asesoría Administrativa</h4>
+                <p>The book Clean Code  considered something of a programming</p>
+            </div>
+           
+            <div class="col-md-4 col-sm-4 col-xs-12 ">
+                <img src="assets/images/service-icon3.jpg" alt="Image">
+                <h4>Asesoría Financiera</h4>
+                <p>There’s too much going on in there at too many different levels</p>
+            </div>
+          
+        </div>
+       
+    </div>
+   
+</section-->
+
+<!-- end intro -->
+<section class="featured-services transition">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <h2>Beneficios</h2>
+                <h4 style="color:#FFFFFF;">Somos diferenciadores en nuestro sector. </h4>
+            </div>
+            <!-- end col-4 -->
+            <div class="col-md-8  col-sm-12 col-xs-12">
+                <div class="row inner">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <!--i class="flaticon-001-wallet-1" aria-hidden="true"></i-->
+                        <img class="img-fluid" src="assets/images/icons/customer-service.svg">
+                        <h4>SERVICIO PERSONALIZADO</h4>
+                        <p>Contamos con un equipo capacitado para atender cada una de tus necesidades.</p>
+                    </div>
+                    <!-- end col-6 -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <img class="img-fluid" src="assets/images/icons/adaptation.svg">
+                        <h4>ADAPTACIÓN</h4>
+                        <p>Contamos con Personal de acuerdo a tu necesidad “In-House”, “On line” o Presencial.</p>
+                    </div>
+                    <!-- end col-6 -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <img class="img-fluid" src="assets/images/icons/innovation.svg">
+                        <h4>INNOVACIÓN CONSTANTE</h4>
+                        <p>Constante cambio y actualización en Planeación y Estrategias Fiscales.</p>
+                    </div>
+                    <!-- end col-6 -->
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <img class="img-fluid" src="assets/images/icons/service.svg">
+                        <h4>GARANTÍA DE SERVICIO</h4>
+                        <p>Nos Enfocamos en brindar soluciones y garantizar el mejor servicio.</p>
+                    </div>
+                    <!-- end col-6 -->
+
+                </div>
+                <!-- end row inner -->
+            </div>
+            <!-- end col-8 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end featured-services -->
+
+<section class="work-process transition" id="hacemos">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Cómo lo Hacemos</h2>
+                <h4 style="padding-bottom: 6px;">Nos enfocamos en objetivos claros y alcanzables.</h4>
+            </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+        <div class="row">
+
+            <div class="col-6 col-sm-6 col-md-3 " style="padding-bottom: 14px;">
+                <img src="assets/images/paso-1.png" class="img-fluid">
+            </div>
+            <div class="col-10 col-sm-6 col-md-3" style="padding-bottom: 14px;">
+                <img src="assets/images/paso-2.png" class="img-fluid">
+            </div>
+            <div class="col-10 col-sm-6 col-md-3" style="padding-bottom: 14px;">
+                <img src="assets/images/paso-3.png" class="img-fluid">
+            </div>
+            <div class="col-10 col-sm-6 col-md-3" style="padding-bottom: 14px;">
+                <img src="assets/images/paso-4.png" class="img-fluid">
+            </div>
+
+        </div>
+
+        <!-- end circles -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end work-process -->
+
+<section class="quote transition">
+    <div class="video-bg">
+        <video id="vid" src="assets/videos/video.mp4" muted loop></video>
+
+    </div>
+    <!-- end video-bg -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--h6>Infinite Scroll</h6-->
+                <h2>
+                    Incrementa las Capacidades de tu Negocio con Soluciones Útiles y Precisas
+                </h2>
+                <a routerLink="/home" fragment="contacto">MÁS INFORMACIÓN</a> </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end quote -->
+
+
+<section class="testimonials" id="testimonios">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Testimonios de Nuestros Clientes</h2>
+                <h4>La entera satisfacción de nuestros clientes respalda nuestro servicio.</h4>
+            </div>
+            <!-- end col-12 -->
+            <div class="col-xs-12">
+                <div class="owl-slider">
+                    <div>
+                        <div class="testimonial-box">
+                            <figure class="head">
+                                <!--img src="assets/images/headshot1.jpg" alt="Image"-->
+                            </figure>
+                            <h5>VCP Tecnología</h5>
+                            <small>Erik Castillo (Director General)</small> <span class="rates"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </span>
+                            <p>Como clientes por más de 5 años de HC Inteligencia en Personal destacamos el profesionalismo en todos los servicios que ofrecen; además resaltaría la amplia experiencia del equipo y su compromiso con los clientes para buscar
+                                siempre la mejor solución.</p>
+                        </div>
+                        <!-- end testimonial-box -->
+                    </div>
+                    <!-- end div -->
+                    <div>
+                        <div class="testimonial-box">
+                            <figure class="head">
+                                <!--img src="assets/images/headshot1.jpg" alt="Image"-->
+                            </figure>
+                            <h5>CECIG A.C.</h5>
+                            <small>Susana Cruickshank (Socia Fundadora)</small> <span class="rates"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </span>
+                            <p>Desde que comencé a llevar mi contabilidad personal como la de CECIG con HC Inteligencia en Personal, comencé a descansar. Tuve muchos problemas con la contabilidad anteriormente y tanto el trato personal como el manejo de
+                                la contabilidad, el despacho ha sido de toda mi confianza. Muy agradecida por tener un despacho tan profesional.</p>
+                        </div>
+                        <!-- end testimonial-box -->
+                    </div>
+                    <!-- end div -->
+                    <div>
+                        <div class="testimonial-box">
+                            <figure class="head">
+                                <!--img src="assets/images/headshot1.jpg" alt="Image"-->
+                            </figure>
+                            <h5>CALAUDIT</h5>
+                            <small>Laura Faour (Socia Fundadora)</small> <span class="rates"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </span>
+                            <p>HC Inteligencia en Personal siempre está buscando agregar valor a nuestra relación, son muy conocedores de sus temas, por lo que son altamente recomendables. Más que proveedor puedes considerarlo como un aliado en tema contable
+                                y nóminas.</p>
+                        </div>
+                        <!-- end testimonial-box -->
+                    </div>
+                    <div>
+                        <div class="testimonial-box">
+                            <figure class="head">
+                                <!--img src="assets/images/headshot1.jpg" alt="Image"-->
+                            </figure>
+                            <h5>SIMPLIFIK</h5>
+                            <small>Gonzalo Rolnik (Socio Fundador)</small> <span class="rates"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </span>
+                            <p>Creemos y estamos convencidos de que son de gran ayuda para que Simplifik pueda hacer las cosas bien, y crecer con mucho orden en el futuro.</p>
+                        </div>
+                        <!-- end testimonial-box -->
+                    </div>
+                    <div>
+                        <div class="testimonial-box">
+                            <figure class="head">
+                                <!--img src="assets/images/headshot1.jpg" alt="Image"-->
+                            </figure>
+                            <h5>OETESA</h5>
+                            <small>Federico Castillo</small> <span class="rates"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </span>
+                            <p>Después de más de 18 años de trabajar con HC Inteligencia en Personal, puedo decir que además del apoyo con la contabilidad y asesoría fiscal en 6 Empresas del Grupo, hemos forjado una extraordinaria relación profesional, siempre
+                                están disponibles para ayudarte y llevan un excelente control en todos los ámbitos de su área de responsabilidad.</p>
+                        </div>
+                        <!-- end testimonial-box -->
+                    </div>
+                    <!-- end div -->
+                </div>
+                <!-- end owl-slider -->
+            </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end testimonials -->
+
+<!-- end intro -->
+<section class="featured-social transition">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <h2>Síguenos en las Redes</h2>
+                <h4 style="color: #FFFFFF;">Nos encontramos activos en las redes sociales para brindar más confianza, aportando información de valor.</h4>
+            </div>
+            <!-- end col-4 -->
+            <div class="col-md-8  col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 12px;">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHcInteligenciaEnPersonal%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1072847496127761"
+                            width="340" height="400" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <!-- end col-6 -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <a class="twitter-timeline" height="400" href="https://twitter.com/hc_inteligencia?ref_src=twsrc%5Etfw">Tweets by hc_inteligencia</a>
+                    </div>
+                </div>
+                <!-- end row inner -->
+            </div>
+            <!-- end col-8 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end featured-services -->
+
+<section class="partners" id="partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Nuestros Partners</h2>
+            </div>
+            <!-- end col-12 -->
+
+            <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+                <div class="row">
+                    <div class="partners-slider">
+                        <div class="">
+                            <a href="https://cocaconsultores.com/" target="_blank">
+                                <img style="padding-top: 12px;" class="img-fluid" src="assets/images/partners/coca.png">
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="https://cocaconsultinggroup.com/" target="_blank">
+                                <img class="img-fluid" src="assets/images/partners/cocagroup.png">
+                            </a>
+                        </div>
+                        <div class="">
+
+                            <img class="img-fluid" src="assets/images/partners/veyco.png">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end partners -->
+
+<section class="get-quote transition" id="contacto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-8 col-xs-12">
+                <h2 style="color: #FFFFFF;">Contacto</h2>
+                <!--h6>INFINITE SCROLL</h6-->
+                <form [formGroup]="contactForm" (ngSubmit)="formSubmit(contactForm.value)">
+                    <input type="text" formControlName="nombre" placeholder="Nombre" class="first">
+                    <div *ngIf="contactForm.controls['nombre'].invalid && contactForm.controls['nombre'].touched" style="width: 50%;" class="alert alert-danger">
+                        <div *ngIf="contactForm.controls['nombre'].errors.required">
+                            Nombre es requerido.
+                        </div>
+                        <div *ngIf="contactForm.controls['nombre'].errors.maxlength">
+                            Has excedido el tamaño.
+                        </div>
+                    </div>
+                    <input type="text" formControlName="email" placeholder="E-mail" class="second">
+                    <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" style="width: 50%;" class="alert alert-danger">
+                        <div *ngIf="contactForm.controls['email'].errors.required">
+                            Email es requerido.
+                        </div>
+                        <div *ngIf="contactForm.controls['email'].errors.email">
+                            Email debe tener formato válido.
+                        </div>
+                    </div>
+                    <input type="text" formControlName="whatsapp" placeholder="Whatsapp">
+                    <div *ngIf="contactForm.controls['whatsapp'].invalid && contactForm.controls['whatsapp'].touched" class="alert alert-danger">
+                        <div *ngIf="contactForm.controls['whatsapp'].errors.required">
+                            Whatsapp es requerido.
+                        </div>
+                    </div>
+                    <div data-tap-disabled="true">
+                        <select class="form-control" formControlName="servicio" id="exampleSelect1">
+                        <option disabled [ngValue]="null" selected>¿SERVICIO DE INTERÉS?</option>
+                        <option class="servicios" value="Asesoría Contable y Fiscal">CONTABLE Y FISCAL</option>
+                        <option class="servicios" value="Asesoría Administrativa">ADMINISTRATIVA</option>
+                        <option class="servicios" value="Asesoría Financiera">FINANCIERA</option>
+                        <option class="servicios" value="Otro">OTRO</option>
+                    </select>
+                    </div>
+                    <div *ngIf="contactForm.controls['servicio'].invalid && contactForm.controls['servicio'].touched" class="alert alert-danger">
+                        <div *ngIf="contactForm.controls['servicio'].errors.required">
+                            Servicio es requerido.
+                        </div>
+                    </div>
+                    <textarea formControlName="mensaje" placeholder="Mensaje"></textarea>
+                    <div *ngIf="contactForm.controls['mensaje'].invalid && contactForm.controls['mensaje'].touched" class="alert alert-danger">
+                        <div *ngIf="contactForm.controls['mensaje'].errors.required">
+                            Mensaje es requerido.
+                        </div>
+                    </div>
+                    <button style="margin-top: 20px;" [disabled]="!contactForm.valid" type="submit">ENVIAR</button>
+                </form>
+            </div>
+            <!-- end col-6 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end get-quote -->
+
+<div class="interest-links">
+    <div class="container">
+        <div class="row" style="padding-bottom: 30px;">
+            <div class="theme-title-one text-center">
+                <h2>Enlaces de Interés</h2>
+                <h4>Enlaces recomendados para orientación y apoyo.</h4>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 col-xs-8 col-xs-offset-2">
+                <div class="row">
+                    <div class="enlaces-slider">
+                        <div class="item-link">
+                            <a href="https://www.sat.gob.mx" target="_blank">
+                                <img class="img-fluid opacity-2" src="assets/images/gobierno/sat.png">
+                            </a>
+                        </div>
+                        <div class="item-link">
+                            <a href="https://www.tfja.gob.mx/" target="_blank">
+                                <img src="assets/images/gobierno/tfja.png">
+                            </a>
+                        </div>
+                        <div class="item-link">
+                            <a href="https://portalmx.infonavit.org.mx/" target="_blank">
+                                <img src="assets/images/gobierno/infonavit.png">
+                            </a>
+                        </div>
+                        <div class="item-link">
+                            <a href="http://imss.gob.mx/" target="_blank">
+                                <img src="assets/images/gobierno/imss.png">
+                            </a>
+                        </div>
+                        <div class="item-link">
+                            <a href="https://dof.gob.mx/" target="_blank">
+                                <img src="assets/images/gobierno/diario.png">
+                            </a>
+                        </div>
+                        <div class="item-link">
+                            <a href="https://www.banxico.org.mx/" target="_blank">
+                                <img src="assets/images/gobierno/banxico.png">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.our-solution -->
+
+<!-- MAPA -->
+<!-- Google Map -->
+<!--div class="google-map-two">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.6052281675643!2d-99.16650864980346!3d19.34292938687123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffde8e4ce533%3A0x9bbcc8d266c3b1a8!2sCuadrante%20de%20San%20Francisco%2045%2C%20San%20Francisco%2C%20Coyoac%C3%A1n%2C%2004320%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1611537458420!5m2!1ses-419!2smx"
+        width="100%" height="410" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div-->
+
+<app-footer></app-footer>
